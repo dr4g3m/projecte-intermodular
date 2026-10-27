@@ -39,7 +39,7 @@
     <figcaption>Jose Mesa Delgado</figcaption>
   </figure>
   <figure class="miembro">
-    <img src="../assets/miembros/abel-martin-carmona.jpg" alt="Foto de Abel Martin Carmona" />
+    <img src="../assets/miembros/abel-martin-carmona_v2.jpg" alt="Foto de Abel Martin Carmona" />
     <figcaption>Abel Martin Carmona</figcaption>
   </figure>
   <figure class="miembro">
