@@ -1,7 +1,2 @@
-abel paleto
-jose loco
-hola chico/a
-muhhamad gay
-
-Jose furry
-Jose
+Web de projecte intermodular
+Fet per Jose, Abel y Muhhammad
