@@ -1,2 +1,2 @@
 Web de projecte intermodular
-Fet per Jose, Abel y Muhhammad
+Fet per Jose, Abel y Muhammad
