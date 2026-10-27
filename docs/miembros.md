@@ -43,7 +43,7 @@
     <figcaption>Abel Martin Carmona</figcaption>
   </figure>
   <figure class="miembro">
-    <img src="../assets/miembros/muhammad-numan.jpg" alt="Foto de Muhhammad Numan" />
-    <figcaption>Muhhammad Numan</figcaption>
+    <img src="../assets/miembros/muhammad-numan.jpg" alt="Foto de Muhammad Numan" />
+    <figcaption>Muhammad Numan</figcaption>
   </figure>
 </div>
