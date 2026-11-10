@@ -3,37 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReservaFàcil · Esquelet</title>
+  <title>ReservaFàcil · Esquelet · Forn de Llenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script type="module" src="/js/app.js"></script>
 </head>
 <body>
   <!-- TODO F1/F4: identitat, servei, horaris i condicions coherents amb config.js. -->
-  <header><h1>Nom del restaurant</h1><p>TODO: presentació del negoci.</p>
+  <header><h1>Nom del restaurant · La Massa Forn de Llenya</h1><p>TODO: presentació del negoci. Pizzeria artesanal de fermentació lenta i forn de llenya des de 2018.</p>
     <nav><a href="#reserva">Reservar</a> · <a href="#assistent">Assistent</a> · <a href="/gestion/">Gestió</a></nav>
   </header>
   <main>
     <section id="reserva">
       <h2>Reserva una taula</h2>
       <form id="booking-form">
-        <label>Nom <input name="name" required minlength="2" maxlength="100"></label>
+        <label>Nom <input name="name" required minlength="2" maxlength="100" placeholder="Nom i cognoms"></label>
         <label>Data <input name="date" type="date" required></label>
         <label>Hora <select name="time" required disabled><option value="">Consulta una data</option></select></label>
-        <label>Comensals <input name="diners" type="number" min="1" max="8" required></label>
+        <label>Comensals <input name="diners" type="number" min="1" max="8" required placeholder="1 - 8"></label>
         <button type="submit">Reservar</button>
       </form>
       <p id="booking-status" role="status">TODO F4: connectar el formulari.</p>
     </section>
     <section id="assistent">
       <h2>Assistent</h2>
-      <div id="messages" role="log" aria-live="polite"><p>TODO F5: missatge de benvinguda.</p></div>
+      <div id="messages" role="log" aria-live="polite"><p>TODO F5: missatge de benvinguda. Bon dia. Pots consultar aquí disponibilitat, al·lèrgens de la carta o condicions de reserva.</p></div>
       <form id="chat-form">
-        <label>Missatge <input name="message" maxlength="500" required></label>
+        <label>Missatge <input name="message" maxlength="500" required placeholder="Escriu la teva consulta..."></label>
         <button type="submit">Enviar</button>
       </form>
       <p id="chat-status" role="status"></p>
     </section>
-    <section><h2>Condicions</h2><p>TODO F1: una taula, durada, capacitat, dies i hores. Dades fictícies.</p></section>
+    <section><h2>Condicions</h2><p>TODO F1: una taula, durada, capacitat, dies i hores. Dades fictícies. Capacitat màxima de 8 persones per taula · Temps de taula estipulat: 90 minuts · Servei de dimarts a diumenge (13:00–16:00 i 20:00–23:30).</p></section>
   </main>
 </body>
 </html>

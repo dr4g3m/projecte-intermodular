@@ -7,3 +7,440 @@ table { border-collapse: collapse; }
 th, td { border: 1px solid #aaa; padding: .4rem; }
 #messages { min-height: 5rem; border: 1px solid #aaa; padding: .5rem; }
 /* TODO: diferenciar usuario/asistente, espera, error y confirmación. */
+
+/* ==========================================================================
+   ESTÉTICA EDITORIAL / PIZZERÍA ARTESANAL (PÚBLICO + GESTIÓN)
+   ========================================================================== */
+
+:root {
+  --bg-paper: #f4f0e8;
+  --bg-surface: #fbf9f5;
+  --bg-muted: #ebe5d9;
+  --ink: #1c1917;
+  --ink-secondary: #57524e;
+  --terracotta: #9e2a2b;
+  --terracotta-hover: #7d2021;
+  --olive: #2d4739;
+  --amber: #8a5a19;
+  --line: #d4cdc0;
+  --line-strong: #1c1917;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-paper);
+  color: var(--ink);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  max-width: 1080px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografía de títulos estilo carta impresa */
+h1, h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   CABECERA PRINCIPAL (index.html)
+   ========================================================================== */
+
+header {
+  border-top: 2px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  padding: 1.75rem 0 1.25rem;
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+header h1 {
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+header p {
+  margin: 0;
+  color: var(--ink-secondary);
+  font-size: 0.95rem;
+  max-width: 65ch;
+}
+
+header nav {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+}
+
+header nav a,
+body > a[href="/"] {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1.5px solid transparent;
+}
+
+header nav a:hover,
+body > a[href="/"]:hover {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+}
+
+/* ==========================================================================
+   ESTRUCTURA PRINCIPAL Y SECCIONES (index.html)
+   ========================================================================== */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 800px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  main > section:last-of-type {
+    grid-column: 1 / -1;
+  }
+}
+
+section {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  padding: 1.5rem;
+  margin: 0;
+}
+
+section h2,
+body > h2 {
+  font-size: 1.65rem;
+  margin: 0 0 1.25rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+main > section:last-of-type {
+  background-color: var(--bg-muted);
+  border-color: var(--line);
+}
+
+main > section:last-of-type p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+/* ==========================================================================
+   VISTA DE GESTIÓN (index_2.html - elementos directos en body)
+   ========================================================================== */
+
+body > h1 {
+  font-size: 2.35rem;
+  margin: 0 0 0.25rem 0;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+body > a[href="/"] {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--line-strong);
+  padding: 0.35rem 0.75rem;
+  vertical-align: middle;
+  background-color: var(--bg-surface);
+}
+
+body > #refresh {
+  width: auto;
+  display: inline-block;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.55rem 1.1rem;
+  background-color: var(--bg-surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+
+body > #refresh:hover {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+}
+
+body > h2 {
+  margin-top: 2.5rem;
+}
+
+#edit-form {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+#edit-form label {
+  margin: 0;
+}
+
+#edit-form button {
+  margin: 0;
+}
+
+/* ==========================================================================
+   FORMULARIOS, CONTROLES Y BOTONES
+   ========================================================================== */
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-secondary);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[name="id"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--line-strong);
+  background-color: #ffffff;
+}
+
+input[readonly],
+input:disabled,
+select:disabled {
+  background-color: var(--bg-muted);
+  color: var(--ink-secondary);
+  border-color: var(--line);
+  cursor: not-allowed;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--terracotta);
+  color: #ffffff;
+  border: 1px solid var(--terracotta);
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--terracotta-hover);
+  border-color: var(--terracotta-hover);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   TABLA DE RESERVAS (index_2.html)
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+}
+
+@media (min-width: 720px) {
+  table {
+    display: table;
+  }
+}
+
+thead {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+}
+
+th {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--ink);
+}
+
+td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  border-left: none;
+  border-right: none;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+td:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+}
+
+tbody tr:hover {
+  background-color: #f1ece1;
+}
+
+td button {
+  width: auto;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.74rem;
+  margin-right: 0.35rem;
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+
+td button:hover {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+  border-color: var(--ink);
+}
+
+/* ==========================================================================
+   ASISTENTE Y ESTADOS (espera, error, confirmación)
+   ========================================================================== */
+
+#messages {
+  min-height: 14rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--line);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+#messages p,
+#messages .message {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  max-width: 88%;
+  border: 1px solid var(--line);
+  background-color: var(--bg-surface);
+  color: var(--ink);
+  align-self: flex-start;
+}
+
+/* Mensajes enviados por el usuario */
+#messages .user,
+#messages [data-role="user"],
+#messages [data-sender="user"] {
+  align-self: flex-end;
+  background-color: var(--ink);
+  color: var(--bg-surface);
+  border-color: var(--ink);
+}
+
+/* Barra de estado (público y admin) */
+[role="status"] {
+  margin: 1rem 0 0 0;
+  padding: 0.65rem 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  background-color: var(--bg-muted);
+  color: var(--ink-secondary);
+  border-left: 3px solid var(--ink-secondary);
+}
+
+#admin-status {
+  margin: 1rem 0;
+}
+
+[role="status"]:empty {
+  display: none;
+}
+
+/* Estado de espera */
+.loading,
+.wait,
+.espera,
+[role="status"][data-state="loading"] {
+  background-color: #f6efe2;
+  color: var(--amber);
+  border-left-color: var(--amber);
+}
+
+/* Estado de error */
+.error,
+[role="status"].error,
+[role="status"][data-state="error"] {
+  background-color: #f9ebeb;
+  color: var(--terracotta);
+  border-left-color: var(--terracotta);
+}
+
+/* Estado de confirmación */
+.success,
+.confirm,
+.confirmacion,
+[role="status"].success,
+[role="status"][data-state="success"] {
+  background-color: #eaf0ec;
+  color: var(--olive);
+  border-left-color: var(--olive);
+}
