@@ -13,6 +13,9 @@ th, td { border: 1px solid #aaa; padding: .4rem; }
    ========================================================================== */
 
 :root {
+  /* 👇 CAMBIA AQUÍ LA RUTA DE TU IMAGEN DE FONDO (ej: url('/img/mi-fondo.jpg')) 👇 */
+  --imagen-inicio: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1920&q=80');
+
   --bg-paper: #f4f0e8;
   --bg-surface: #fbf9f5;
   --bg-muted: #ebe5d9;
@@ -41,6 +44,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* IMAGEN DE FONDO SOLO EN LA PÁGINA DE INICIO (index.html) */
+body:has(header) {
+  background-image: 
+    linear-gradient(rgba(20, 17, 15, 0.62), rgba(20, 17, 15, 0.72)),
+    var(--imagen-inicio);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 /* Tipografía de títulos estilo carta impresa */
 h1, h2 {
   font-family: 'Instrument Serif', Georgia, serif;
@@ -54,10 +68,11 @@ h1, h2 {
    ========================================================================== */
 
 header {
-  border-top: 2px solid var(--line-strong);
-  border-bottom: 1px solid var(--line-strong);
-  padding: 1.75rem 0 1.25rem;
-  margin-bottom: 2.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  border-top: 4px solid var(--terracotta);
+  padding: 1.75rem 1.75rem 1.25rem;
+  margin-bottom: 1.75rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
@@ -139,7 +154,7 @@ body > h2 {
 
 main > section:last-of-type {
   background-color: var(--bg-muted);
-  border-color: var(--line);
+  border-color: var(--line-strong);
 }
 
 main > section:last-of-type p {
